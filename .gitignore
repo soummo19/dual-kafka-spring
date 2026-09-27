@@ -4,3 +4,4 @@ bin/
 
 ### VS Code
 .vscode/zk-consumer-service/src/main/resources/*.json
+zk-consumer-service/src/main/resources/*.json
