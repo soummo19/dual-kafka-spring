@@ -61,3 +61,6 @@ http-client-pool:
   default-keep-alive-millis: 20000
   connect-timeout: 5000
   response-timeout: 1000
+
+firebase:
+  firebase-config-file: classpath:notification-sample-aeaf5-firebase-adminsdk-fbsvc-acbc61c820.json

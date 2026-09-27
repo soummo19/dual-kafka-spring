@@ -7,10 +7,19 @@ import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.common.header.Header;
 import org.springframework.core.NestedExceptionUtils;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class ZkConsumerServiceUtils {
+
+    public static String getJsonPrettyPrint(Object object) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        String responseJson = gson.toJson(object);
+        return responseJson;
+    }
 
     public static String resolveTraceIdFromKafkaRecord(ConsumerRecord<?, ?> record) {
         Header traceIdHeader = record.headers().lastHeader(Constants.HDR_TRACE_ID);
